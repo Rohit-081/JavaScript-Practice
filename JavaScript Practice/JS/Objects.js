@@ -4,9 +4,14 @@ myCar.make = "Ford";
 myCar.year = 1969;
 myCar.model = "Mustang";
 myCar.color;
+console.log(myCar.hasOwnProperty("color"));
 
 const a = Array.isArray([myCar]);
-console.log(a);
+console.log(a); //true;
+console.log(typeof a);
+console.log(typeof myCar);
+console.log(typeof [myCar]);
+console.log(typeof null);
 
 const myObj = new Object(),
   str = "myString",
