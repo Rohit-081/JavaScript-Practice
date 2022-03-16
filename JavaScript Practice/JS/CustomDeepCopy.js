@@ -1,9 +1,53 @@
-var Obj1 = {
-  key1: "value1",
-  key2: "value2",
-  key3: {
-    key4: "value4",
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  address: {
+    street: "North 1st street",
+    city: "San Jose",
+    state: "CA",
+    country: "USA",
   },
+};
+
+let arr = [1, 22, 3, 4];
+
+let obj1 = {
+  name: "scotch.io",
+  exec: function exec() {
+    return true;
+  },
+};
+
+const obj = {
+  data: [
+    {
+      type: "articles",
+      id: "1",
+      attributes: {
+        title: "JSON:API paints my bikeshed!",
+        body: "The shortest article. Ever.",
+      },
+      relationships: {
+        author: {
+          data: { id: "42", type: "people" },
+        },
+      },
+    },
+  ],
+  included: [
+    {
+      type: "people",
+      id: "42",
+      attributes: {
+        name: "John",
+      },
+    },
+  ],
+};
+
+var obj5 = {
+  Name: { Name1: "Rohit", Name2: { Name1: "Shaan", Name2: "Aarjav" } },
+  Hobbies: { Hobby1: "Time Pass", Hobby2: "Gardening" },
 };
 
 function isObject(obj) {
@@ -26,4 +70,7 @@ function customDeepCopy(obj) {
   return result;
 }
 
-console.log(customDeepCopy(Obj1));
+console.log(customDeepCopy(person));
+console.log(customDeepCopy(arr));
+console.log(customDeepCopy(obj));
+console.log(customDeepCopy(obj5));
